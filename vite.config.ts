@@ -34,6 +34,9 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, 'dist/public'),
     emptyOutDir: true,
+    rollupOptions: {
+      external: ['@workspace/api-client-react'],
+    },
   },
   server: {
     port,
