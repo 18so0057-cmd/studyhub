@@ -1,10 +1,17 @@
-import { useGetSummary } from "@workspace/api-client-react";
+// import { useGetSummary } from "@workspace/api-client-react";
 import { BookOpen, CheckCircle2, Calendar, Star } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { usePoints } from "@/hooks/usePoints";
 
 export function SummaryHeader() {
-  const { data: summary, isLoading } = useGetSummary();
+const summary = {
+  tasksCompleted: 0,
+  studyHours: 0,
+  notesCreated: 0,
+  points: 0,
+};
+
+const isLoading = false;
   const points = usePoints();
 
   return (
